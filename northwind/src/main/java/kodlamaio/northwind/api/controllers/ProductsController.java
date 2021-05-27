@@ -32,6 +32,11 @@ public class ProductsController {
 		return this.productService.getAll();
 	}
 	
+	@GetMapping("/getAllByPage")
+	public DataResult<List<Product>> getAllByPage(int pageNo, int pageSize){
+		return this.productService.getAll(pageNo,pageSize);
+	}
+	
 	@PostMapping("/add")
 	public Result add(@RequestBody Product product) {
 		return this.productService.add(product);
@@ -50,6 +55,11 @@ public class ProductsController {
 	@GetMapping("/getByProductNameContains")
 	public DataResult<List<Product>> getByProductNameContains(@RequestParam String productName){
 		return this.productService.getByProductNameContains(productName);
+	}
+	
+	@GetMapping("/getAllSortedDESC")
+	public DataResult<List<Product>> getAllSorted(){
+		return this.productService.getAllSorted();
 	}
 	
 	
