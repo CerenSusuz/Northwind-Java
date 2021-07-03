@@ -10,7 +10,7 @@ import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 public interface ProductService {
     DataResult<List<Product>> getAll();
     
-    DataResult<List<Product>> getAll(int pageNo, int pageSize);
+    DataResult<List<Product>> getAllByPage(int pageNo, int pageSize);
     
     DataResult<List<Product>> getAllSorted();
     
