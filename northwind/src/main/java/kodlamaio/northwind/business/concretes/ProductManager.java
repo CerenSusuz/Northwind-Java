@@ -102,4 +102,10 @@ public class ProductManager implements ProductService{
 		(this.productDao.getProductWithCategoryDetails(),"Data listelendi"); 
 	}
 
+	@Override
+	public DataResult<List<Product>> getByCategory_CategoryId(int categoryId) {
+		return new SuccessDataResult<List<Product>>
+		(this.productDao.getByCategory_CategoryId(categoryId),"Data listelendi");
+	}
+
 }
